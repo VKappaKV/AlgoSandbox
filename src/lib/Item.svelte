@@ -1,23 +1,38 @@
 <script></script>
 <div class="item">
-    <slot></slot>
+    <div class="content">
+        <slot></slot>
+    </div>
 </div>
 <style lang="scss">
-    .item{
-        background-color: yellowgreen;
+    @use '../styles/variables.scss';
+    .item {
+        background-color: variables.$secondary;
         display: flex;
-        height: 6vh;
-        width: 3vw;
+        justify-content: center;
+        align-items: center;
+        width: 3vw;  /* Controllo la larghezza */
+        height: 0;   /* Imposto l'altezza a 0 */
+        padding-bottom: 3vw; /* Imposto il padding-bottom alla stessa dimensione della larghezza */
         margin-left: 25px;
         margin-right: 25px;
-        border-radius: 50%;                    
+        border-radius: 50%;
         cursor: pointer;
+        position: relative; /* Aggiungo la posizione relativa per permettere al contenuto di posizionarsi all'interno */
         &:disabled{
             opacity: 0.4;
             cursor: not-allowed;
         }
-        :global(svg){
-            fill: #bd1414;
+
+        .content {
+            position: absolute; /* Posiziono assolutamente il contenuto all'interno dell'elemento */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;  /* Utilizzo flex per centrare il contenuto */
+            justify-content: center;
+            align-items: center;
         }
     }
 </style>

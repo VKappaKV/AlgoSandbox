@@ -19,14 +19,16 @@
     });
   </script>
   
-  <style>
+  <style lang="scss">
+     @use '../styles/variables.scss';
+
     .toast {
       position: fixed;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #333;
-      color: white;
+      background-color: variables.$tertiary;
+      color: variables.$background;
       padding: 10px;
       border-radius: 5px;
       opacity: 0;

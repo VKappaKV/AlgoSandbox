@@ -2,10 +2,17 @@
   import Item from "./Item.svelte";
   // @ts-ignore
   import FaRegHandPointRight from 'svelte-icons/fa/FaRegHandPointRight.svelte'
+  // @ts-ignore
+  import FaRegHandPointLeft from 'svelte-icons/fa/FaRegHandPointLeft.svelte'
+  import SvgIcon from "./SvgIcon.svelte";
 </script>
 <div class="container">
-    <Item><FaRegHandPointRight/></Item>
-    <Item></Item>
+    <Item>
+        <SvgIcon icon={FaRegHandPointRight} />
+    </Item>
+    <Item>
+        <SvgIcon icon={FaRegHandPointLeft} />
+    </Item>
     <Item></Item>
     <Item></Item>
 </div>
@@ -16,7 +23,7 @@
         justify-content: center;
         gap: 50px;
         flex-wrap: wrap;
-        background-color: brown;
+        background-image: linear-gradient(rgba(0,0,0,0.4) 0 0);
         height: 100px;
         width: 100%;
         border-start-start-radius: 20px;

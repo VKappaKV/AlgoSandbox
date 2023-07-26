@@ -1,14 +1,13 @@
 <script>
   import Toast from "./Toast.svelte";
 
-    let buttonText = 'Click Me';
+    let buttonText ;
     let timerId = null;
     let isHolding = false;
     let txnConfirmed = false;
   
     function handleMousedown() {
       isHolding = true;
-      buttonText = 'HOLD';
       timerId = setTimeout(() => {
         triggerHoldEvent();
       }, 1000);
@@ -18,7 +17,6 @@
     function handleMouseup() {
       isHolding = false;
       clearTimeout(timerId);
-      buttonText = 'Click Me';
     }
   
     function triggerHoldEvent() {
@@ -26,16 +24,19 @@
         handleMouseup()
       // Qui puoi triggerare qualsiasi azione o evento desideri
     }
+  $: isHolding ? buttonText = 'HOLD' : buttonText = 'SEND';
   </script>
   
-  <style>
+  <style lang="scss">
+    @use '../styles/variables.scss';
     button {
       position: relative;
       padding: 10px 20px;
+      margin-bottom: 10px;
       font-size: 16px;
       border: none;
       border-radius: 5px;
-      background-color: #4CAF50;
+      background-color: variables.$secondary;
       color: white;
       cursor: pointer;
       overflow: hidden;
@@ -48,7 +49,7 @@
       left: 0;
       width: 0;
       height: 100%;
-      background-color: #2E7D32;
+      background-image: linear-gradient(rgba(0,0,0,0.4) 0 0);
       transition: width 0.1s linear; /* Transizione più rapida quando il pulsante non è premuto */
     }
   
