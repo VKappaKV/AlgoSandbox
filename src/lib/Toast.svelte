@@ -24,13 +24,14 @@
 
     .toast {
       position: fixed;
-      top: 20px;
+      top: 50%;
       left: 50%;
       transform: translateX(-50%);
       background-color: variables.$tertiary;
       color: variables.$background;
       padding: 10px;
       border-radius: 5px;
+      border: 2px outset variables.$background;
       opacity: 0;
       transition: opacity 0.8s ease;
       z-index: 1000;
@@ -41,7 +42,10 @@
     }
   </style>
   
-  <div class="toast" class:visible={visible}>
+  <div class="toast" class:visible={visible} >
     <slot></slot>   
   </div>
+  
+
+
   

@@ -7,11 +7,13 @@
     <svelte:component this={icon} />
   </div>
   
-  <style>
+  <style lang="scss">
+    @use '../styles/variables.scss';
     .svg-icon {
+      color: variables.$details;
       width: 50%;
       height: 50%;
+      padding: 2px;
     }
-
   </style>
   

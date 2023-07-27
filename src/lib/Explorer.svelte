@@ -4,8 +4,8 @@
     div{
         display: flex;
         flex: 2;
-        background-color: variables.$tertiary;
-        border: 2px solid variables.$details;
+/*         background-color: variables.$tertiary;
+        border: 2px solid variables.$details; */
         height: 100%;
     }
 </style>

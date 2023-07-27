@@ -17,6 +17,7 @@
         margin-left: 25px;
         margin-right: 25px;
         border-radius: 50%;
+        border: 2px outset variables.$details;
         cursor: pointer;
         position: relative; /* Aggiungo la posizione relativa per permettere al contenuto di posizionarsi all'interno */
         &:disabled{
